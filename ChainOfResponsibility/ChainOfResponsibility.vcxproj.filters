@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Quelldateien">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Headerdateien">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Ressourcendateien">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Headerdateien\Geldautomat">
+      <UniqueIdentifier>{6fcd3c91-2dde-4617-acf4-7e659620ab97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Geldautomat">
+      <UniqueIdentifier>{48e57226-5f7d-4d4e-bf22-1143c8f1ab2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Feuerwehr">
+      <UniqueIdentifier>{a0c149f8-d06d-4956-bf35-15bd69f9265d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Feuerwehr">
+      <UniqueIdentifier>{9132bc26-8bf5-49a7-a03c-ab6ea9f01576}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Geldautomat.cpp">
+      <Filter>Quelldateien\Geldautomat</Filter>
+    </ClCompile>
+    <ClCompile Include="Wassertrupp.cpp">
+      <Filter>Quelldateien\Feuerwehr</Filter>
+    </ClCompile>
+    <ClCompile Include="Angriffstrupp.cpp">
+      <Filter>Quelldateien\Feuerwehr</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Chainlink.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Geldautomat.h">
+      <Filter>Headerdateien\Geldautomat</Filter>
+    </ClInclude>
+    <ClInclude Include="Geld.h">
+      <Filter>Headerdateien\Geldautomat</Filter>
+    </ClInclude>
+    <ClInclude Include="Wassertrupp.h">
+      <Filter>Headerdateien\Feuerwehr</Filter>
+    </ClInclude>
+    <ClInclude Include="Angriffstrupp.h">
+      <Filter>Headerdateien\Feuerwehr</Filter>
+    </ClInclude>
+    <ClInclude Include="Befehlstyp.h">
+      <Filter>Headerdateien\Feuerwehr</Filter>
+    </ClInclude>
+    <ClInclude Include="Geld5.h">
+      <Filter>Headerdateien\Geldautomat</Filter>
+    </ClInclude>
+    <ClInclude Include="Geld10.h">
+      <Filter>Headerdateien\Geldautomat</Filter>
+    </ClInclude>
+    <ClInclude Include="Geld20.h">
+      <Filter>Headerdateien\Geldautomat</Filter>
+    </ClInclude>
+    <ClInclude Include="Geld50.h">
+      <Filter>Headerdateien\Geldautomat</Filter>
+    </ClInclude>
+    <ClInclude Include="Geld100.h">
+      <Filter>Headerdateien\Geldautomat</Filter>
+    </ClInclude>
+    <ClInclude Include="Geldschacht.h">
+      <Filter>Headerdateien\Geldautomat</Filter>
+    </ClInclude>
+    <ClInclude Include="Feuerwehrtrupp.h">
+      <Filter>Headerdateien\Feuerwehr</Filter>
+    </ClInclude>
+    <ClInclude Include="Geldschacht5.h">
+      <Filter>Headerdateien\Geldautomat</Filter>
+    </ClInclude>
+    <ClInclude Include="Geldschacht10.h">
+      <Filter>Headerdateien\Geldautomat</Filter>
+    </ClInclude>
+    <ClInclude Include="Geldschacht20.h">
+      <Filter>Headerdateien\Geldautomat</Filter>
+    </ClInclude>
+    <ClInclude Include="Geldschacht50.h">
+      <Filter>Headerdateien\Geldautomat</Filter>
+    </ClInclude>
+    <ClInclude Include="Geldschacht100.h">
+      <Filter>Headerdateien\Geldautomat</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

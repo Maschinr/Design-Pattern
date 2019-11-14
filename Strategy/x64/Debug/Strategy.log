@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\Daniel\Desktop\Programmieren\Design Pattern\Strategy\main.cpp(20,10): warning C4477: "printf": Die Formatzeichenfolge "%i" erfordert ein Argument vom Typ "int", das variadic-Argument "1" weist aber den Typ "size_t" auf.
+C:\Users\Daniel\Desktop\Programmieren\Design Pattern\Strategy\main.cpp(20,10): message : Verwenden Sie ggf. "%zi" in der Formatzeichenfolge.
+  Strategy.vcxproj -> C:\Users\Daniel\Desktop\Programmieren\Design Pattern\Strategy\x64\Debug\Strategy.exe

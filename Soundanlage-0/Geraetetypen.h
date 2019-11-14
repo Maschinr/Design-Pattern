@@ -1,5 +1,4 @@
-#ifndef GERAETETYPEN_H
-#define GERAETETYPEN_H
+#pragma once
 
 enum class GeraeteTypen {
 	KEIN,
@@ -7,5 +6,3 @@ enum class GeraeteTypen {
 	KASSETENDECK,
 	RADIO
 };
-
-#endif

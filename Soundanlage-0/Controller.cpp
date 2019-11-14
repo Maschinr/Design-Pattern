@@ -1,118 +1,47 @@
 #include "Controller.h"
-#include <stdio.h>
 
-Controller::Controller() : 
-	aktivesAudioGeraet(GeraeteTypen::KEIN), 
-	audioStreamQuelle(GeraeteTypen::KEIN), 
-	lautsprecherAktiv(false), 
-	radioUebertragungAktiv(false)  {
+Controller::Controller() : aktivesAudioGeraet(GeraeteTypen::KEIN) {
+	this->geraete[GeraeteTypen::CD_PLAYER] = std::make_shared<CDPlayer>();
+	this->geraete[GeraeteTypen::KASSETENDECK] = std::make_shared<KassettenDeck>();
+	this->geraete[GeraeteTypen::RADIO] = std::make_shared<Radio>();
+}
 
+void Controller::setAktivesAudioGeraet(GeraeteTypen aktivesAudioGeraet) {
+	this->aktivesAudioGeraet = aktivesAudioGeraet;
 }
 
 void Controller::playPause() {
-	switch (this->aktivesAudioGeraet) {
-	case GeraeteTypen::CD_PLAYER:
-		this->wiedergabePause();
-		break;
-	case GeraeteTypen::KASSETENDECK:
-		this->abspielenAnhalten();
-		break;
-	case GeraeteTypen::RADIO:
-		this->setUebertragungAktiv(!this->radioUebertragungAktiv);
-		break;
-	default:
-		printf("Play/Pause Invalid Device\n");
-		break;
+	std::shared_ptr<AudioGeraet> g = this->geraete[this->aktivesAudioGeraet];
+	if (g != nullptr) {
+		g->playPause();
+	} else {
+		printf("Invalid Device\n");
 	}
 }
 
 void Controller::stop() {
-	switch (this->aktivesAudioGeraet) {
-	case GeraeteTypen::CD_PLAYER:
-		this->stopCD();
-		break;
-	case GeraeteTypen::KASSETENDECK:
-		this->stopKassette();
-		break;
-	case GeraeteTypen::RADIO:
-		this->setUebertragungAktiv(false);
-		break;
-	default:
-		printf("Stop Invalid Device\n");
-		break;
+	std::shared_ptr<AudioGeraet> g = this->geraete[this->aktivesAudioGeraet];
+	if (g != nullptr) {
+		g->stop();
+	} else {
+		printf("Invalid Device\n");
 	}
 }
 
 void Controller::next() {
-	switch (this->aktivesAudioGeraet) {
-	case GeraeteTypen::CD_PLAYER:
-		this->spieleNaechstenTitel();
-		break;
-	case GeraeteTypen::KASSETENDECK:
-		this->spuleVorwaerts();
-		break;
-	case GeraeteTypen::RADIO:
-		this->sucheNaechstenSender();
-		break;
-	default:
-		printf("Next Invalid Device\n");
-		break;
+	std::shared_ptr<AudioGeraet> g = this->geraete[this->aktivesAudioGeraet];
+	if (g != nullptr) {
+		g->next();
+	} else {
+		printf("Invalid Device\n");
 	}
 }
 
 void Controller::previous() {
-	switch (this->aktivesAudioGeraet) {
-	case GeraeteTypen::CD_PLAYER:
-		this->spieleVorherigenTitel();
-		break;
-	case GeraeteTypen::KASSETENDECK:
-		this->spuleRueckwaerts();
-		break;
-	case GeraeteTypen::RADIO:
-		this->sucheVorherigenSender();
-		break;
-	default:
-		printf("Previous Invalid Device\n");
-		break;
+	std::shared_ptr<AudioGeraet> g = this->geraete[this->aktivesAudioGeraet];
+	if (g != nullptr) {
+		g->previous();
+	} else {
+		printf("Invalid Device\n");
 	}
-}
-
-void Controller::wiedergabePause() {
-	printf("Wiedergabe Pause\n");
-}
-
-void Controller::stopCD() {
-	printf("stopCD\n");
-}
-
-void Controller::spieleNaechstenTitel() {
-	printf("spieleNaechstenTitel\n");
-}
-
-void Controller::spieleVorherigenTitel() {
-	printf("spieleVorherigenTitel\n");
-}
-
-void Controller::abspielenAnhalten() {
-	printf("abspielenAnhalten\n");
-}
-
-void Controller::stopKassette() {
-	printf("stopKassette\n");
-}
-
-void Controller::spuleVorwaerts() {
-	printf("spuleVorwaerts\n");
-}
-
-void Controller::spuleRueckwaerts() {
-	printf("spuleRueckwaerts\n");
-}
-
-void Controller::sucheNaechstenSender() {
-	printf("sucheNaechstenSender\n");
-}
-
-void Controller::sucheVorherigenSender() {
-	printf("sucherVorherigenSender\n");
 }

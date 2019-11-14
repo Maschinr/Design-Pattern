@@ -1,12 +1,16 @@
-#ifndef CONTROLLER_H
-#define CONTROLLER_H
-
+#pragma once
+#include <map>
+#include <memory>
 #include "Geraetetypen.h"
+#include "Lautsprecher.h"
+#include "CDPlayer.h"
+#include "KassettenDeck.h"
+#include "Radio.h"
 
 class Controller {
 public:
 	Controller();
-	void setAktivesAudioGeraet(GeraeteTypen aktivesAudioGeraet) { this->aktivesAudioGeraet = aktivesAudioGeraet;  }
+	void setAktivesAudioGeraet(GeraeteTypen aktivesAudioGeraet);
 	void playPause();
 	void stop();
 	void next();
@@ -14,20 +18,6 @@ public:
 
 private:
 	GeraeteTypen aktivesAudioGeraet;
-	GeraeteTypen audioStreamQuelle;
-	bool lautsprecherAktiv;
-	bool radioUebertragungAktiv;
-
-	void wiedergabePause();
-	void stopCD();
-	void spieleNaechstenTitel();
-	void spieleVorherigenTitel();
-	void abspielenAnhalten();
-	void stopKassette();
-	void spuleVorwaerts();
-	void spuleRueckwaerts();
-	void setUebertragungAktiv(bool uebertragungAktiv) { this->radioUebertragungAktiv = uebertragungAktiv;  }
-	void sucheNaechstenSender();
-	void sucheVorherigenSender();
+	std::map<GeraeteTypen, std::shared_ptr<AudioGeraet>> geraete;
+	Lautsprecher lautSprecher;
 };
-#endif

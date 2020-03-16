@@ -129,6 +129,7 @@
     <ClInclude Include="CDPlayer.h" />
     <ClInclude Include="Controller.h" />
     <ClInclude Include="Geraetetypen.h" />
+    <ClInclude Include="InjectorComponent.h" />
     <ClInclude Include="KassettenDeck.h" />
     <ClInclude Include="Lautsprecher.h" />
     <ClInclude Include="Radio.h" />

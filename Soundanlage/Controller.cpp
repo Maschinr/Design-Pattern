@@ -1,9 +1,16 @@
 #include "Controller.h"
 
-Controller::Controller() : aktivesAudioGeraet(GeraeteTypen::KEIN) {
-	this->geraete[GeraeteTypen::CD_PLAYER] = std::make_shared<CDPlayer>();
-	this->geraete[GeraeteTypen::KASSETENDECK] = std::make_shared<KassettenDeck>();
-	this->geraete[GeraeteTypen::RADIO] = std::make_shared<Radio>();
+Controller::Controller(Lautsprecher sprecher, std::map<GeraeteTypen, std::shared_ptr<AudioGeraet>> geraete) : aktivesAudioGeraet(GeraeteTypen::KEIN) {
+	this->injectLautsprecher(sprecher);
+	this->injectGeraete(geraete);
+}
+
+void Controller::injectGeraete(std::map<GeraeteTypen, std::shared_ptr<AudioGeraet>> geraete) {
+	this->geraete = geraete;
+}
+
+void Controller::injectLautsprecher(Lautsprecher sprecher) {
+	this->lautSprecher = sprecher;
 }
 
 void Controller::setAktivesAudioGeraet(GeraeteTypen aktivesAudioGeraet) {
